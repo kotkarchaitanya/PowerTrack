@@ -6,23 +6,7 @@
       "use": "@vercel/node"
     },
     {
-      "src": "index.html",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "home.html",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "history.html",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "schedule.html",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "notices.html",
+      "src": "*.html",
       "use": "@vercel/static"
     },
     {
@@ -43,15 +27,8 @@
     }
   ],
   "routes": [
+    { "handle": "filesystem" },
     { "src": "/api/(.*)", "dest": "/api/index.js" },
-    { "src": "/css/(.*)", "dest": "/css/$1" },
-    { "src": "/js/(.*)", "dest": "/js/$1" },
-    { "src": "/assets/(.*)", "dest": "/assets/$1" },
-    { "src": "/data.json", "dest": "/data.json" },
-    { "src": "/home.html", "dest": "/home.html" },
-    { "src": "/history.html", "dest": "/history.html" },
-    { "src": "/schedule.html", "dest": "/schedule.html" },
-    { "src": "/notices.html", "dest": "/notices.html" },
     { "src": "/(.*)", "dest": "/index.html" }
   ]
 }
