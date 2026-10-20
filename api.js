@@ -641,14 +641,14 @@
       data.adminRequests.unshift(reqObj);
       await this.persist('ADMIN_REQUEST_CREATED');
 
-      // URLs for Accept / Decline
+      // URLs for Accept / Decline (dynamic origin for both local dev & Vercel)
       const origin = (window.location.protocol === 'file:') ? 'http://localhost:8085' : window.location.origin;
       const pathname = window.location.pathname.replace(/\/index\.html$/, '');
       const baseAppUrl = `${origin}${pathname}`;
       const acceptUrl = `${baseAppUrl}/?action=approve_admin&reqId=${reqId}&token=${actionToken}`;
       const declineUrl = `${baseAppUrl}/?action=decline_admin&reqId=${reqId}&token=${actionToken}`;
-      const serverAcceptUrl = `http://localhost:8085/api/admin/action?action=approve&reqId=${reqId}&token=${actionToken}`;
-      const serverDeclineUrl = `http://localhost:8085/api/admin/action?action=decline&reqId=${reqId}&token=${actionToken}`;
+      const serverAcceptUrl = `${origin}/api/admin/action?action=approve&reqId=${reqId}&token=${actionToken}`;
+      const serverDeclineUrl = `${origin}/api/admin/action?action=decline&reqId=${reqId}&token=${actionToken}`;
 
       // Dispatch Email to kotkarchaitanya18@gmail.com
       let emailDispatched = false;
