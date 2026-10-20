@@ -1,0 +1,12 @@
+{
+  "name": "powertrack",
+  "version": "1.0.0",
+  "description": "PowerTrack - Electricity Load-Shedding & Restoration Information System",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": ["powertrack", "electricity", "load-shedding"],
+  "author": "",
+  "license": "ISC"
+}
